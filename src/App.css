@@ -72,14 +72,14 @@ background: #fff;
   text-align: left;
 }
 
-.ReceipesList__title{
+.ReceipesList__title, .Receipe__title{
   color: #e74c3c;
   text-transform: uppercase;
   font-size: 1.1rem;
   letter-spacing: 2px;
 }
 
-.ReceipesList__subtitle{
+.ReceipesList__subtitle {
   font-weight: 400;
   font-size: 0.8rem;
   letter-spacing: 2px;
@@ -90,9 +90,8 @@ background: #fff;
   letter-spacing: 1px;
 }
 
-.ReceipesList__button{
+.ReceipesList__button, .Receipe__button{
   border: solid 2px #e74c3c;
-  color:green;
   background: transparent;
   padding: 0.5rem;
   margin: 0 0.2rem;
@@ -101,8 +100,66 @@ background: #fff;
   text-transform: uppercase;
   font-weight: 500;
   outline:none;
-  cursor: pointer;
-  
+  text-decoration: none; 
+}
+
+.ReceipesList__button a, .Receipe__button a{
+  text-decoration: none;
+}
+.ReceipesList__button a:hover, .Receipe__button a:hover{
+  text-decoration: none;
 }
 
 
+/* Receipe container */
+
+.Receipe_container{
+  Margin:3em auto;
+  text-align: center;
+
+}
+
+.Receipe_card-body{
+padding: 0rem 0rem 2rem 2rem;
+}
+
+.Receipe__title{
+  color:#000;
+  font-weight: 600;
+}
+.Receipe__subtitle, .Receipe_website{
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+.Receipe__subtitle span, .Receipe_website span{
+  font-size:0.8rem;
+  letter-spacing: 1px;
+  font-weight:400 !important ;
+}
+.Receipe_website span{
+  color:red;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 375px) {
+  .form-container input[type=text]{
+     padding:3px;
+     font-size:0.7em;
+     margin-right:0.5em;
+    }
+    
+    .form-container input[type=text]:hover{
+      background: #fff;
+    }
+    .form-container button{     
+      padding:3px 8px;      
+      font-size: 0.7em;
+    }
+    .Receipe_container-img
+    {
+      width:280px;
+
+    }
+    
+}

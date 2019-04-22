@@ -3,6 +3,7 @@ import './App.css';
 import Form from "./Components/Form";
 import ReceipesList from './Components/ReceipesList';
 
+const API_KEY ="ca77ba8e00642303614dc2050b0a6f6d";
 class App extends Component {
     
   state={
@@ -11,12 +12,21 @@ class App extends Component {
 
    getReceipe = async(e) => {
      e.preventDefault();
-     const API_KEY ="b05dde71f8168678f8c1376c33d49be8"
+    
      const receipe = e.target.elements.receipeName.value ;
      const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${receipe}`);
      const data=await api_call.json(); 
-     this.setState({receipes: data.recipes});
-     console.log(data.recipes);   
+     this.setState({receipes: data.recipes});  
+  }
+  componentDidMount = () => {
+    const json = localStorage.getItem("recepe");
+    const recepe1 = JSON.parse(json);
+    this.setState({recepe1});
+  }
+
+  componentDidUpdate = () => {
+    const recepe = JSON.stringify(this.state.receipes);
+    localStorage.setItem("recepe", recepe);
   }
 
   render() {
