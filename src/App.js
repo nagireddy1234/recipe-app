@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from "./Components/Form";
 import ReceipesList from './Components/ReceipesList';
+require('dotenv').config();
 
-const API_KEY ="ca77ba8e00642303614dc2050b0a6f6d";
+const API_KEY =process.env.REACT_APP_API_KEY;
 class App extends Component {
     
   state={
     receipes:[]
   }
 
-   getReceipe = async(e) => {
+   getReceipe = async (e) => {
      e.preventDefault();
-    
-     const receipe = e.target.elements.receipeName.value ;
-     const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${receipe}`);
+     const receipe = e.target.elements.receipeName.value ;   
+     const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${receipe}`)
      const data=await api_call.json(); 
      this.setState({receipes: data.recipes});  
   }

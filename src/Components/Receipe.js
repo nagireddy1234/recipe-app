@@ -29,7 +29,7 @@ class Receipe extends React.Component{
          <div className="Receipe_card-body">
            <p className="Receipe__title"> { `${this.state.activeRecipe.title}`} </p>
              <p className="Receipe__subtitle">PUBLISHER:<span> {this.state.activeRecipe.publisher} </span>  </p>
-             <p className="Receipe_website">WEBSITE:<span>  <a>{this.state.activeRecipe.publisher_url} </a></span></p>
+             <p className="Receipe_website">WEBSITE:<span>  <a href="/#">{this.state.activeRecipe.publisher_url} </a></span></p>
                <button className="Receipe__button">
                <Link to={{pathname:'/',}}>  HOME </Link>
                  </button> 
